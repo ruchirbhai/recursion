@@ -29,6 +29,11 @@ def subsets(nums):
 def subset_helper(data, index, slate):
     #base case
     if index == len(data):
+        # result.append(slate) 
+        # If we used slate instead of slate[:] out output will be all empty strings
+        # this is beacuse even though it will build the strings correctly the slate will pop the element out
+        # Thus all the recursive function will be reference to the empty slate instead of a snapshot
+        # slate[:] forces a snapshot copy instead of refrence to the variable slate
         result.append(slate[:])
         return
 
