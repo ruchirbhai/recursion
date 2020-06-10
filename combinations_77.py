@@ -26,7 +26,7 @@ result = []
 def combinations_77(n,k):
     # data = range(n)
     # print(data)
-    combination_helper(n+1,1,[])
+    combination_helper(n+1  ,1,[])
 
     return result
     
@@ -44,6 +44,7 @@ def combination_helper(length, index, slate):
 
     # Why is the base case needed??
     if index == length:
+        #no op
         return
 
     # Recursive case
