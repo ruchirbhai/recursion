@@ -39,13 +39,12 @@ def combination_sum2_40(nums):
 
 def combination_sum2_helper(data, index, slate):
     # Backtrack case
-    count = 0
-    for i in slate:
-        count += i
-    
-    if count == target:
+    if sum(slate) == target:
         result.append(slate[:])
         return
+    elif sum(slate) > target:
+        return
+
     
     #base case
     if index == len(data):
