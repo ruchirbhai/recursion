@@ -24,3 +24,27 @@
 # xy
 # ----------- END of output ---------------
 # (Note that the first line of output is an empty line, corresponding to empty set [“”].)
+
+s = "abcde"
+
+def generate_all_subsets(s):
+    res = []
+    # string = [char for char in s]
+    def helper(data, index, slate):
+        #base case
+        if index < 0:
+            res.append("".join(reversed(slate)))
+            return
+        #recurssion
+        helper(data, index-1, slate)
+        slate.append(data[index])
+        # res.append(slate)
+        helper(data, index-1, slate)
+        slate.pop()
+
+        return 
+    helper(s,len(s)-1,[])
+    return res
+
+if __name__ == "__main__":
+    print(generate_all_subsets(s))
